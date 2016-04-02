@@ -1,0 +1,1 @@
+../../../POPAppRater/Pod/Classes/POPAppRater.h

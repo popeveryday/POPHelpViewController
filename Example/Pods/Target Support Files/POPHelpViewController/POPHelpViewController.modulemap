@@ -1,0 +1,6 @@
+framework module POPHelpViewController {
+  umbrella header "POPHelpViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

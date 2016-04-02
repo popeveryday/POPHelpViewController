@@ -1,0 +1,50 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - MBProgressHUD (0.9.2)
+  - POPAppRater (0.1.0):
+    - POPLib (~> 0.1)
+  - POPHelpViewController (0.1.0):
+    - AFNetworking (~> 2.5)
+    - POPAppRater (~> 0.1)
+    - POPLib (~> 0.1)
+    - POPOrientationNavigationVC (~> 0.1)
+  - POPLib (0.1.67):
+    - MBProgressHUD (~> 0.9)
+  - POPOrientationNavigationVC (0.1.23)
+
+DEPENDENCIES:
+  - POPHelpViewController (from `../`)
+
+EXTERNAL SOURCES:
+  POPHelpViewController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  POPAppRater: b69700146912edffbbcfbbb799c847b6deb69660
+  POPHelpViewController: 7378603cb4b33354d9624fa80b5dbdd37e880e05
+  POPLib: 0dfb7d52e98eb706a269c13640f5063e2bac4f59
+  POPOrientationNavigationVC: cc2fe2168f0c4cb30344a4262d913a8a6de236bb
+
+COCOAPODS: 0.39.0

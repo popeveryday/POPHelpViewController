@@ -1,0 +1,6 @@
+framework module POPAppRater {
+  umbrella header "POPAppRater-umbrella.h"
+
+  export *
+  module * { export * }
+}

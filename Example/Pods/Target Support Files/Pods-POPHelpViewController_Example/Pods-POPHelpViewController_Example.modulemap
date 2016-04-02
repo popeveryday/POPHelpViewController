@@ -1,0 +1,6 @@
+framework module Pods_POPHelpViewController_Example {
+  umbrella header "Pods-POPHelpViewController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

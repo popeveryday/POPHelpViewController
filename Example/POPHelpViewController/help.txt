@@ -1,0 +1,160 @@
+type=title&value=Welcome&layout=center|
+type=image&value=iMBR_logo&scale=0.5|
+type=text&fontsize=30&spacing=30&color=ffffff&value=Welcome|
+type=text&spacing=30&color=ffffff&value=First steps to Sync and
+View your backup messages.||
+
+
+
+type=title&value=iPhone SMS Backup File|
+type=image&value=iMBR_iTunes-backup&scale=0.5|
+type=text&color=ffffff&spacing=10&value=Connect your iPhone/iPad/iPod to your Mac or PC and open iTunes.
+Select your iPhone. 
+Click "Back Up Now" in "Summary" tab.|
+type=image&spacing=30&value=iMBR_Backup-file&scale=0.5|
+type=text&color=ffffff&spacing=10&value=Go to backup location on your computer:|
+type=text&color=ffffff&fontsize=10&value=Mac:
+	~/Library/Application Support/MobileSync/Backup/
+	
+Windows XP:
+	C:\Documents and Settings\[your username]\
+Application Data\Apple Computer\MobileSync\Backup\
+	
+Windows 7 or Windows 8:
+	C:\Users\user\AppData\Roaming\Apple Computer\MobileSync\Backup|
+type=text&color=ffffff&value=Choose one backup folder, 
+for example:|
+type=text&color=ffffff&fontsize=10&value=9182749a9879a8798a798e98798798f9879877c98798|
+type=text&color=ffffff&value=Open that directory and look for the following filename:|
+type=text&color=ffffff&fontsize=10&value=3d0d7e5fb2ce288813306e4d4636395e047a3d28||
+
+
+
+type=title&value=iTunes Upload|
+type=image&value=iMBR_Sync&scale=0.5|
+type=text&color=ffffff&spacing=10&value=Connect your iPhone to your Mac 
+or PC using the cable.
+Open iTunes.
+Select your iPhone.
+Switch to the "Apps" tab, scroll down 
+and look for iMessageBackupReader.
+Transfer your file with name:|
+type=text&color=ffffff&fontsize=10&value=3d0d7e5fb2ce288813306e4d4636395e047a3d28|
+type=text&color=ffffff&value=Switch to iMessageBackupReader
+Click "Start" and then "Import from Itune".
+Or to merge more backup:
+Click "More" > "Import More Backup" and then "Import from Itune".||
+
+
+
+type=title&value=Wifi Upload|
+type=image&value=iMBR_Sync-wifi&scale=0.5|
+type=text&color=ffffff&spacing=10&value=Connect your iPhone to the same
+network as your Mac or PC.|
+type=image&spacing=30&value=iMBR_Sync-wifi-2&scale=0.5|
+type=text&color=ffffff&spacing=10&value=Switch to iMessageBackupReader
+Click "Start" and then "Wifi Upload".
+(Or to merge more backup:
+Click "More" > "Import More Backup" and then "Wifi Upload").
+
+Enter the URL to the web browser
+and upload your file with name:|
+type=text&color=ffffff&fontsize=10&value=3d0d7e5fb2ce288813306e4d4636395e047a3d28||
+
+
+type=title&value=Settings|
+type=image&value=settings1&scale=0.75|
+type=text&value=General Settings
++ Sort Selected Messages: sort selected messages in order of date before they are copied.
++ Sort Conversation: by last message's date or by contact's name.
++ Sort Conversation Ascending: usually Off for date and On for name.|
+type=image&value=settings2&spacing=30&scale=0.75|
+type=text&value=Contacts Settings
++ Contact Sources: choose which source will be mapped to message.
+  > iCloud Contacts: current device's contacts
+  > Extra Contacts: using list in-app contacts
+  > All Contacts: mapping iCloud first and then Extra.
++ Extra Contacts: click to manage your in-app contacts.|
+type=image&value=settings3&spacing=30&scale=0.75|
+type=text&value=Security Settings
+Master Passcode: turn on to require password on startup screen.
++ New Passcode: enter your passcode.
++ Retype Pass: enter passcode again.
++ Recovery Email: your passcode will be sent to this email if you forgot password.|
+
+type=image&value=settingscontact1&spacing=30&scale=0.75|
+type=text&value=+ Enter search text to search contact's name or contact's number.
++ Click "+" to create new contact.
++ Click any contact to edit.|
+
+type=image&scale=0.75&spacing=30&value=settingscontact2|
+type=text&color=ffffff&value=Add/update contact
+Enter contact full name.
+Enter contact number or email.
+Click "Save" to complete.|
+
+type=image&scale=0.75&spacing=30&value=settingscontact3|
+type=text&color=ffffff&value=Delete a contact
+Swipe left and click "Delete".||
+
+
+
+type=title&value=Usage|
+type=image&scale=0.75&value=iMBR_Search|
+type=text&color=ffffff&spacing=10&value=Search contact's name or contact's number or message content.
+Type search text in the search bar on top of conversation list.|
+type=image&scale=0.75&spacing=30&value=iMBR_Usage2|
+type=text&color=ffffff&spacing=10&value=Copy contact's detail or message.
+Touch and hold to on contact's name or message.
+Tap "Copy" to copy text to clipboard.|
+type=image&scale=0.75&spacing=30&value=iMBR_Usage|
+type=text&color=ffffff&spacing=10&value=Delete a conversation or message, swipe left and click "Delete".||
+
+
+
+type=title&value=Conversation Usage|
+type=image&scale=0.75&value=conversation1|
+type=text&&value=Conversation - Normal Mode
++ Text Message: send SMS or iMessage.
++ Voice Call: make a phone call if available.
++ Video Facetime: make a video facetime call.|
+type=image&scale=0.75&spacing=30&value=conversation2|
+type=text&&value=Conversation - Edit Mode
+Click "Edit" button to enter Edit Mode. 
+Click on any message to select/deselect.
++ Copy: copy all selected messages that are sorted by selected order (refer General Settings for sorting by date).
++ Trash: remove selected messages.||
+
+
+
+type=title&value=Dropbox Data Store|
+type=image&value=dropbox1&scale=0.75|
+type=text&&value=To use Dropbox Data Store
+Click More and then "Dropbox Data Store".|
+type=image&value=dropbox2&spacing=30&scale=0.75|
+type=text&&value=Click Yes to continue|
+type=image&value=dropbox3&spacing=30&scale=0.75|
+type=text&&value=Enter your dropbox account.
+Enter your email and password.
+Click Sign in and Link.
+(Note: If you've installed dropbox, you'll be transferring the software to log and allows to retrieve data)|
+type=image&value=dropbox4&spacing=30&scale=0.75|
+type=text&align=left&value=Now in the Dropbox menu:
++ Unlink Dropbox Account: to sign out.
++ Load Data From Dropbox: load lastest message data that you have saved before.
+(Note: Your data will be merge with data available in the software)
++ Save Data To Dropbox: save current message data to your dropbox.||
+
+
+
+type=title&value=The End&layout=center|
+type=image&value=iMBR_logo&scale=0.5|
+type=text&fontsize=20&spacing=30&color=ffffff&urlappid=896411278&value=iMessage Backup Reader|
+type=text&color=ffffff&value=(Tap title above to rate app)|
+type=text&spacing=20&color=ffffff&value=Free software developed by Poptato.com
+We hope you'll love it.||
+
+
+
+
+
