@@ -28,7 +28,7 @@
 
 +(POPHelpViewController*) presentHelpFromViewController:(UIViewController*)fromVC iPhoneDatasourceFile:(NSString*)iPhonefile iPadDatasourcefile:(NSString*)iPadfile isRequireReviewFullHelp:(BOOL)isRequireReviewFullHelp
 {
-    return [self presentHelpFromViewController:fromVC iPhoneDatasource:[FileLib ReadFile:iPhonefile] iPadDatasource:[FileLib ReadFile:iPadfile] isRequireReviewFullHelp:isRequireReviewFullHelp];
+    return [self presentHelpFromViewController:fromVC iPhoneDatasource:[FileLib readFile:iPhonefile] iPadDatasource:[FileLib readFile:iPadfile] isRequireReviewFullHelp:isRequireReviewFullHelp];
 }
 
 +(POPHelpViewController*) presentHelpFromViewController:(UIViewController*)fromVC iPhoneDatasource:(NSString*)iphoneDs iPadDatasource:(NSString*)ipadDs isRequireReviewFullHelp:(BOOL)isRequireReviewFullHelp
@@ -67,8 +67,8 @@
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     if (self) {
-        self.iPhoneHelpDatasource = [FileLib ReadFile:iphonefile];
-        self.iPadHelpDatasource = [FileLib ReadFile:ipadfile];
+        self.iPhoneHelpDatasource = [FileLib readFile:iphonefile];
+        self.iPadHelpDatasource = [FileLib readFile:ipadfile];
     }
     return self;
 }
@@ -124,7 +124,7 @@
     NSInteger index = 0;
     for (NSString* page in [datasource componentsSeparatedByString:@"||"])
     {
-        if(![StringLib IsValid:page]) continue;
+        if(![StringLib isValid:page]) continue;
         [views addObject:[self buildViewControllerWithContent:page index:index]];
         index++;
     }
@@ -170,33 +170,33 @@
     CGFloat centery = 0;
     NSString* type, *value;
     
-    content = [StringLib Trim:content];
+    content = [StringLib trim:content];
     
     for (NSString* line in [content componentsSeparatedByString:@"|"] ) {
-        if(![StringLib IsValid:line]) continue;
+        if(![StringLib isValid:line]) continue;
         
-        Hashtable* options = [StringLib DeparseString: [StringLib Trim:line] ];
+        Hashtable* options = [StringLib deparseString: [StringLib trim:line] ];
         
-        type = [StringLib Trim:[options Hashtable_GetValueForKey:@"type"]];
-        value = [StringLib Trim:[options Hashtable_GetValueForKey:@"value"]];
+        type = [StringLib trim:[options hashtable_GetValueForKey:@"type"]];
+        value = [StringLib trim:[options hashtable_GetValueForKey:@"value"]];
         
         //image type
         if ([type isEqualToString:@"image"])
         {
             
-            NSString* scale = [options Hashtable_GetValueForKey:@"scale"];
+            NSString* scale = [options hashtable_GetValueForKey:@"scale"];
             float scalevalue = scale != nil ? scale.floatValue : 1;
             
             UIImageView* image;
             
-            if ( [StringLib IndexOf:@"HTTP://" inString:[value uppercaseString]] == 0 )
+            if ( [StringLib indexOf:@"HTTP://" inString:[value uppercaseString]] == 0 )
             {
                 image = ImageViewWithImagename(@"CommonLib.bundle/FileExplorerLoading");
                 
                 [image setContentMode: UIViewContentModeScaleAspectFit];
                 
-                NSString* width = [options Hashtable_GetValueForKey:@"width"];
-                NSString* height = [options Hashtable_GetValueForKey:@"height"];
+                NSString* width = [options hashtable_GetValueForKey:@"width"];
+                NSString* height = [options hashtable_GetValueForKey:@"height"];
                 
                 image.frame = CGRectMake(0,0, (width != nil ? width.floatValue/2 : 100) * scalevalue, (height != nil ? height.floatValue/2 : 100) * scalevalue);
                 
@@ -210,7 +210,7 @@
             }
             
             
-            NSString* newspacing = [options Hashtable_GetValueForKey:@"spacing"];
+            NSString* newspacing = [options hashtable_GetValueForKey:@"spacing"];
             if (newspacing != nil) {
                 centery += newspacing.floatValue;
             }
@@ -219,8 +219,8 @@
             image.center = CGPointMake(centerx, centery);
             centery += (image.frame.size.height/2);
             
-            NSString* url = [options Hashtable_GetValueForKey:@"url"];
-            NSString* urlappid = [options Hashtable_GetValueForKey:@"urlappid"];
+            NSString* url = [options hashtable_GetValueForKey:@"url"];
+            NSString* urlappid = [options hashtable_GetValueForKey:@"urlappid"];
             if ( url != nil || urlappid != nil )
             {
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action: url != nil ? @selector(handlelTapUrl:) : @selector(handlelTapRateApp:) ];
@@ -242,8 +242,8 @@
             label.text = value;
             label.numberOfLines = 1000;
             
-            NSString* url = [options Hashtable_GetValueForKey:@"url"];
-            NSString* urlappid = [options Hashtable_GetValueForKey:@"urlappid"];
+            NSString* url = [options hashtable_GetValueForKey:@"url"];
+            NSString* urlappid = [options hashtable_GetValueForKey:@"urlappid"];
             if ( url != nil || urlappid != nil )
             {
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action: url != nil ? @selector(handlelTapUrl:) : @selector(handlelTapRateApp:) ];
@@ -255,7 +255,7 @@
                 label.accessibilityHint = url;
             }
             
-            NSString* align = [options Hashtable_GetValueForKey:@"align"];
+            NSString* align = [options hashtable_GetValueForKey:@"align"];
             if (align != nil)
             {
                 label.textAlignment = [[align uppercaseString] isEqualToString:@"CENTER"] ? NSTextAlignmentCenter : [[align uppercaseString] isEqualToString:@"LEFT"] ? NSTextAlignmentLeft : [[align uppercaseString] isEqualToString:@"RIGHT"] ? NSTextAlignmentRight : NSTextAlignmentJustified ;
@@ -265,28 +265,28 @@
             
             
             
-            NSString* fontsize = [options Hashtable_GetValueForKey:@"fontsize"];
+            NSString* fontsize = [options hashtable_GetValueForKey:@"fontsize"];
             if (fontsize != nil) {
                 label.font = [UIFont fontWithName:label.font.fontName size:fontsize.floatValue];
             }else if(_defaultFontSize > 0){
                 label.font = [UIFont fontWithName:label.font.fontName size:_defaultFontSize];
             }
             
-            NSString* fontstyle = [options Hashtable_GetValueForKey:@"fontstyle"];
+            NSString* fontstyle = [options hashtable_GetValueForKey:@"fontstyle"];
             if (fontstyle != nil)
             {
                 label.font = [UIFont fontWithName:[NSString stringWithFormat:@"%@-%@", label.font.fontName, fontstyle] size:label.font.pointSize];
             }
             
-            NSString* fontname = [options Hashtable_GetValueForKey:@"fontname"];
+            NSString* fontname = [options hashtable_GetValueForKey:@"fontname"];
             if (fontname != nil)
             {
                 label.font = [UIFont fontWithName:fontname size:label.font.pointSize];
-            }else if( [StringLib IsValid:_defaultFontName] ){
+            }else if( [StringLib isValid:_defaultFontName] ){
                 label.font = [UIFont fontWithName:_defaultFontName size:label.font.pointSize];
             }
             
-            NSString* color = [options Hashtable_GetValueForKey:@"color"];
+            NSString* color = [options hashtable_GetValueForKey:@"color"];
             if (color != nil)
             {
                 label.textColor = [CommonLib colorFromHexString:color alpha:1];
@@ -294,7 +294,7 @@
                 label.textColor = _defaultForeColor;
             }
             
-            NSString* newspacing = [options Hashtable_GetValueForKey:@"spacing"];
+            NSString* newspacing = [options hashtable_GetValueForKey:@"spacing"];
             if (newspacing != nil) {
                 centery += newspacing.floatValue;
             }
@@ -319,7 +319,7 @@
         if ([type isEqualToString:@"title"]) {
             viewcontroller.title = value;
             
-            NSString* layout = [options Hashtable_GetValueForKey:@"layout"];
+            NSString* layout = [options hashtable_GetValueForKey:@"layout"];
             if (layout != nil) {
                 isFlowLayout = [layout isEqualToString:@"flow"];
             }

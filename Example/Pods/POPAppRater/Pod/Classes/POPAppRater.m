@@ -55,7 +55,7 @@
     
     NSArray* parts = [counter componentsSeparatedByString:@","];
     for (NSString* one in parts) {
-        if ([StringLib Contains:@"-" inString:one]) {
+        if ([StringLib contains:@"-" inString:one]) {
             NSArray* oneparts = [one componentsSeparatedByString:@"-"];
             NSInteger from = [oneparts[0] integerValue];
             NSInteger to = oneparts.count > 1 ? [oneparts[1] integerValue] : 0;
@@ -65,7 +65,7 @@
             }
             
         }else{
-            [listCounter addObject:[StringLib Trim:one]];
+            [listCounter addObject:[StringLib trim:one]];
         }
     }
     
