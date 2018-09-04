@@ -1,12 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'POPHelpViewController_Example', :exclusive => true do
+target 'POPHelpViewController_Example' do
   pod 'POPHelpViewController', :path => '../'
+  target 'POPHelpViewController_Tests' do
+  	inherit! :search_paths
+  end
 end
 
-target 'POPHelpViewController_Tests', :exclusive => true do
-  pod 'POPHelpViewController', :path => '../'
 
-  
-end

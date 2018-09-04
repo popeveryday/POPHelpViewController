@@ -123,7 +123,18 @@
         NSString* buttonLater = NSLocalizedStringFromTableInBundle(@"Remind me later", @"AppiraterLocalizable", [NSBundle mainBundle], nil);
         NSString* buttonCancel = NSLocalizedStringFromTableInBundle(@"No, Thanks", @"AppiraterLocalizable", [NSBundle mainBundle], nil);
         
-        [CommonLib alertWithTitle:buttonAccept message:message container:self cancelButtonTitle:buttonCancel otherButtonTitles:buttonAccept, buttonLater, nil];
+        [ViewLib alertWithTitle:buttonAccept message:message fromViewController:nil callback:^(NSString *buttonTitle, NSString *alertTitle) {
+            
+            if ([buttonTitle isEqualToString:buttonAccept]) {
+                [POPAppRater rateAppID: self.appID];
+                self.lastRateAction = @"DONE";
+            }else if ([buttonTitle isEqualToString:buttonAccept]) {
+                [self resetAll];
+            }else{
+                self.lastRateAction = @"NEVER";
+            }
+        } cancelButtonTitle:buttonCancel otherButtonTitles:buttonAccept, buttonLater, nil];
+        
     }else{
         if ([self.lastRateAction isEqualToString:@"NEVER"] && self.counterTimes >= maxResetCounter && maxResetCounter > 0 && maxResetCounter > maxAlertCounter)
         {
@@ -135,21 +146,6 @@
 }
 
 
--(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex) {
-        case 1:
-            [POPAppRater rateAppID: self.appID];
-            self.lastRateAction = @"DONE";
-            break;
-        case 2:
-            [self resetAll];
-            break;
-        default:
-        case 0:
-            self.lastRateAction = @"NEVER";
-            break;
-    }
-}
+
 
 @end
