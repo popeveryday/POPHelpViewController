@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "POPHelpViewController"
-s.version          = "0.2.2"
+s.version          = "0.2.3"
 s.summary          = "POPFormTable is cutom UITableViewController that support generate some common input field for Object-c project."
 s.homepage         = "https://github.com/popeveryday/POPHelpViewController"
 s.license          = 'MIT'
